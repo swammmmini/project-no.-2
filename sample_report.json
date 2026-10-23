@@ -1,0 +1,44 @@
+{
+  "tool": "Automated Web Scanner",
+  "version": "1.0",
+  "generated_at_utc": "2026-01-01T00:00:00+00:00",
+  "targets_scanned": 1,
+  "results": [
+    {
+      "target": "https://example.invalid",
+      "requests": {
+        "GET": {
+          "status_code": 200,
+          "final_url": "https://example.invalid/",
+          "error": null
+        },
+        "OPTIONS": {
+          "status_code": 204,
+          "final_url": "https://example.invalid/",
+          "error": null
+        }
+      },
+      "observed_headers": {
+        "GET": {
+          "content-type": "text/html; charset=utf-8",
+          "access-control-allow-origin": "*"
+        },
+        "OPTIONS": {
+          "access-control-allow-origin": "*"
+        }
+      },
+      "findings": [
+        {
+          "type": "missing_security_header",
+          "header": "content-security-policy",
+          "severity": "MEDIUM",
+          "observed": null,
+          "description": "Illustrative sample only.",
+          "recommendation": "Set a policy appropriate to the application."
+        }
+      ],
+      "note": "Synthetic example only; not a real scan result."
+    }
+  ],
+  "safety_scope": "Ordinary GET and OPTIONS requests only; authorized targets only."
+}
